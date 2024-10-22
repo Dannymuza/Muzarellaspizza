@@ -1,0 +1,27 @@
+---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link data-n-head="ssr" rel="icon" type="image/png" href="https://olaclick.s3.amazonaws.com/companies/logos/3ccd28a5-cc18-4994-9fa3-94d284c73feb.jpg">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="bg-black text-white">
+		<Header />
+		<slot />
+		<Footer />
+	</body>
+</html>
